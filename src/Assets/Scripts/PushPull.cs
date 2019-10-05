@@ -14,12 +14,14 @@ public class PushPull : MonoBehaviour
     void Update() {
         if (Input.GetButtonUp("Grab") && transform.parent != null) {
             transform.parent = null;
+            
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision) {
         if (collision.CompareTag("Player") && Input.GetButtonDown("Grab")) {
             transform.SetParent(player.transform);
+            
         }
     }
 }
