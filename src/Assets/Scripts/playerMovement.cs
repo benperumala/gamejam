@@ -11,6 +11,7 @@ public class playerMovement : MonoBehaviour {
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch;
+    public bool holding = false;
 
     // Start is called before the first frame update
     void Start() {
@@ -22,11 +23,11 @@ public class playerMovement : MonoBehaviour {
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-        if (Input.GetButtonDown("Jump")) {
+        if (Input.GetButtonDown("Jump") && holding == false) {
             jump = true;
         }
 
-        if (Input.GetButtonDown("Crouch")) {
+        if (Input.GetButtonDown("Crouch") && holding == false) {
             crouch = true;
         }
          else if (Input.GetButtonUp("Crouch")) {
