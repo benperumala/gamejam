@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.SceneManager;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
     // https://youtu.be/zc8ac_qUXQY
 
     public void PlayGame() {
-        SceneManager.LoadScene("SampleScene", LoadSceneMode.Additive);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
