@@ -18,6 +18,9 @@ public class PushPull : MonoBehaviour
             transform.parent = null;
             player.GetComponent<playerMovement>().holding = false;
             rb = this.gameObject.AddComponent<Rigidbody2D>();
+            rb.angularDrag = 1000;
+            rb.mass = 100;
+            rb.freezeRotation = true;
         }
     }
 
